@@ -1,0 +1,105 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/font/CinzelDecorative-Black.ttf",
+      "sha1": "2072783fa89c9424f2f52803caa9725b8ebdb05d"
+    },
+    {
+      "path": "src/assets/font/CinzelDecorative-Bold.ttf",
+      "sha1": "e28e0c1aaab05e33a1b3b4bdf71072e3ab97f839"
+    },
+    {
+      "path": "src/assets/font/CinzelDecorative-Regular.ttf",
+      "sha1": "c7c4f19fcfb7cc34ded9341ecc6d1c72ee272dbf"
+    },
+    {
+      "path": "src/assets/font/Poppins-Black.ttf",
+      "sha1": "645e04c53c6b5b35bce654a811ebce16af8aa721"
+    },
+    {
+      "path": "src/assets/font/Poppins-BlackItalic.ttf",
+      "sha1": "be4ef2aac7775a4b0179c0ecfce6cea8f7783f63"
+    },
+    {
+      "path": "src/assets/font/Poppins-Bold.ttf",
+      "sha1": "875cf0cecd647bcf22e79d633d868c1b1ec98dfa"
+    },
+    {
+      "path": "src/assets/font/Poppins-BoldItalic.ttf",
+      "sha1": "6de8952ca08d27ee77f57347d2cef4b4e26aa78f"
+    },
+    {
+      "path": "src/assets/font/Poppins-ExtraBold.ttf",
+      "sha1": "4b5c0750f073abd576413a0898d3b95adaf199c8"
+    },
+    {
+      "path": "src/assets/font/Poppins-ExtraBoldItalic.ttf",
+      "sha1": "94d3ee3acdbd00e37a715a25f2b5237666b5b8a3"
+    },
+    {
+      "path": "src/assets/font/Poppins-ExtraLight.ttf",
+      "sha1": "85af6582a7e6155917c605f9d3fed68c02b23b06"
+    },
+    {
+      "path": "src/assets/font/Poppins-ExtraLightItalic.ttf",
+      "sha1": "6fa0418f91032680d2d8fe4843009f2c80faa61d"
+    },
+    {
+      "path": "src/assets/font/Poppins-Italic.ttf",
+      "sha1": "e2bfcd56016c3c915221ef1c5fc1a17b0776eb91"
+    },
+    {
+      "path": "src/assets/font/Poppins-Light.ttf",
+      "sha1": "e247a92158e112f8bf7b638c8d95381d66b00dbb"
+    },
+    {
+      "path": "src/assets/font/Poppins-LightItalic.ttf",
+      "sha1": "f76102b361e705751a83b7b22fe954daf1f27dd4"
+    },
+    {
+      "path": "src/assets/font/Poppins-Medium.ttf",
+      "sha1": "283f21b44efbdbf276ba802be2d949a36bbc4233"
+    },
+    {
+      "path": "src/assets/font/Poppins-MediumItalic.ttf",
+      "sha1": "b592c62fdf88c40cfd0f031bba6423b1d4430472"
+    },
+    {
+      "path": "src/assets/font/Poppins-Regular.ttf",
+      "sha1": "fdd3002e7d814ee47c1c1b8487c72c6bbb3a2d00"
+    },
+    {
+      "path": "src/assets/font/Poppins-SemiBold.ttf",
+      "sha1": "8a4ace9392d06bcb7f8ea2f5169b07e4c383a90d"
+    },
+    {
+      "path": "src/assets/font/Poppins-SemiBoldItalic.ttf",
+      "sha1": "0c8bed0a5942b2388d36b11c115685d9f01700b0"
+    },
+    {
+      "path": "src/assets/font/Poppins-Thin.ttf",
+      "sha1": "09ba4dcd5509c8085bf88c665dcc51cbdfced27b"
+    },
+    {
+      "path": "src/assets/font/Poppins-ThinItalic.ttf",
+      "sha1": "fb8fccca21550e71135f92bbaf8a2e8a12c90465"
+    },
+    {
+      "path": "src/assets/img/appbg.jpg",
+      "sha1": "4051f8c668d2ba55b7c20d3ae03cf23ad97107b7"
+    },
+    {
+      "path": "src/assets/img/btm_image.png",
+      "sha1": "a490163e66b18cb16208c657ee0656dae3060cdb"
+    },
+    {
+      "path": "src/assets/img/ecologo.jpg",
+      "sha1": "1150a46b339cee43cb5ee7b7b901f118bb0870d7"
+    },
+    {
+      "path": "src/assets/img/top_image.png",
+      "sha1": "3fd140806c35dbe2f9942d60be61ac583663cf1e"
+    }
+  ]
+}
