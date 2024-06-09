@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "427610638472",
+    "project_id": "ecothrive-455fe",
+    "storage_bucket": "ecothrive-455fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427610638472:android:9ca191ef3dc67e9cbe773d",
+        "android_client_info": {
+          "package_name": "com.ecothrew"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbcQgnSnx6RmWfCqbJakeNr5WItyMZUvM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,25 +1,44 @@
+import React, { useContext } from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { UserContext } from '../compents/UserContext';
 
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+const HomeScreen = ({ navigation }: { navigation: any }) => {
+  const { user, logout } = useContext(UserContext);
 
-// create a component
-const HomeScreen = () => {
-    return (
-        <View style={styles.container}>
-            <Text>home</Text>
-        </View>
-    );
+  const handleLogout = async () => {
+    try {
+      // Perform logout logic here, e.g., clear authentication state
+      // Clear rememberedUser flag from AsyncStorage
+      await AsyncStorage.removeItem('rememberedUser');
+      // Perform logout action
+      logout();
+      // Navigate to the login screen
+      navigation.navigate('Login');
+    } catch (e) {
+      console.error('Failed to logout', e);
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.welcomeText}>Welcome, {user?.email || 'Guest'}!</Text>
+      <Button title="Logout" onPress={handleLogout} />
+    </View>
+  );
 };
 
-// define your styles
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'white',
-    },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+  },
+  welcomeText: {
+    fontSize: 20,
+    marginBottom: 20,
+  },
 });
 
-//make this component available to the app
 export default HomeScreen;

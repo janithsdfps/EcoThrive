@@ -23,7 +23,7 @@ const StartScreen = ({ navigation }: any) => {
           
             <TouchableOpacity
               style={styles.button}
-              onPress={() => navigation.navigate('Tab')}
+              onPress={() => navigation.navigate('Login')}
             >
            <Text style={styles.buttonText}>Plant A Tree</Text>
             </TouchableOpacity>

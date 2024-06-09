@@ -1,9 +1,11 @@
 interface color{
     primary : string;
     secondary : string;
+    ash:string;
 }
 export const COLORS : color={
-    primary:'#4CAF50',
-    secondary:'#C7CB1C'
+    primary:'#40744D',
+    secondary:'#BED3BE',
+    ash:'#999999'
     
 }
