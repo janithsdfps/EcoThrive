@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
+import { View, TextInput, Button, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { COLORS } from '../theme/Theme';
 
 const SignupScreen = ({ navigation }: any) => {
     const [email, setEmail] = useState('');
@@ -46,32 +47,68 @@ const SignupScreen = ({ navigation }: any) => {
 
     return (
         <View style={styles.container}>
+            <Text style={styles.header}> Register</Text>
+            <Text style={styles.title}>Create your new account</Text>
+            <View style={styles.inputContainer}>
             <TextInput
-                placeholder="Username"
+                placeholder="Full Name "
                 value={username}
                 onChangeText={setUsername}
-                style={styles.input}
+                
             />
+            </View>
+            
+            <View style={styles.inputContainer}>
             <TextInput
                 placeholder="Email"
                 value={email}
                 onChangeText={setEmail}
-                style={styles.input}
+                
             />
+            </View>
+            
+            <View style={styles.inputContainer}>
             <TextInput
                 placeholder="Password"
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry
-                style={styles.input}
+             
             />
-            {error ? <Text style={styles.error}>{error}</Text> : null}
-            <View style={styles.rememberMeContainer}>
-                <Text>Remember Me</Text>
-                <Button title={rememberMe ? "✓" : " "} onPress={() => setRememberMe(!rememberMe)} />
             </View>
-            <Button title="Signup" onPress={handleSignup} />
-            <Button title="Already have an account? Login" onPress={() => navigation.navigate('Login')} />
+
+            <TouchableOpacity style={styles.sighBtn}
+            onPress={handleSignup}>
+                <Text style={styles.Loginbtntxt}>Signup</Text>
+            </TouchableOpacity>
+      
+
+            
+            
+            {error ? <Text style={styles.error}>{error}</Text> : null}
+            
+            
+
+            <View style={styles.rememberMeContainer}>
+
+            <TouchableOpacity
+            onPress={() => setRememberMe(!rememberMe)}
+            style={[styles.rememberMeButton, rememberMe && styles.rememberMeButtonActive]}
+                >
+                <Text style={styles.rememberMeButtonText}>{rememberMe ? "✓" : " "}</Text>
+                </TouchableOpacity>
+                <Text>Remember Me</Text>
+                {/* <Button title={rememberMe ? "✓" : " "} onPress={() => setRememberMe(!rememberMe)} /> */}
+            </View>
+
+            
+            <View style={styles.bottomField}>
+            <Text style={styles.DNTtext}>Already have an account? </Text>
+                <TouchableOpacity onPress={() => navigation.navigate('Login')} >
+                <Text style={styles.SignupText}>Loging</Text>
+                </TouchableOpacity>
+            </View>
+           
         </View>
     );
 };
@@ -80,11 +117,23 @@ const SignupScreen = ({ navigation }: any) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#2c3e50',
+        backgroundColor: '#fff',
         padding: 16,
     },
+    header:{
+        fontSize:30,
+        color:COLORS.primary,
+        fontFamily:'Poppins-Bold',
+        alignSelf:'center',
+
+      },
+    title:{
+        fontSize:15,
+        color:COLORS.ash,
+        marginBottom:"10%",
+        alignSelf:'center',
+
+      },
     input: {
         width: '100%',
         padding: 8,
@@ -99,8 +148,74 @@ const styles = StyleSheet.create({
     rememberMeContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginVertical: 8,
+        marginVertical: 15,
     },
+    inputContainer: {
+        alignSelf:'center',
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: 350,
+        height: 50,
+        borderRadius: 15,
+        paddingHorizontal: 30,
+        marginVertical: 15,
+        backgroundColor:COLORS.secondary  
+    },
+    sighBtn:{
+        width:250,
+        alignSelf:'center',
+        height:45,
+        backgroundColor:COLORS.primary,
+        borderRadius:30,
+        alignItems:'center',
+        padding:5,
+        marginVertical:30
+      },
+      Loginbtntxt:{
+        fontFamily:'Poppins-Bold',
+        fontSize:20,
+        color:'white'
+      },
+
+      rememberMeButton: {
+        marginHorizontal: 10,
+        width: 20,
+        height: 20,
+        borderWidth: 1,
+        borderColor: COLORS.primary,
+        borderRadius:10,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      rememberMeButtonActive: {
+        backgroundColor: COLORS.primary,
+      },
+      rememberMeButtonText: {
+        fontSize: 10,
+      },
+      rememberText:{
+        fontSize:12,
+        marginHorizontal:10
+      },
+      bottomField:{
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:"flex-start",
+        alignSelf:'center',
+        marginTop:'50%'
+      },
+      DNTtext:{
+        fontSize:15,
+        color:COLORS.ash,
+        margin:5
+    
+      },
+      SignupText:{
+        fontSize:15,
+        color:COLORS.primary,
+      },
+    
+
 });
 
 export default SignupScreen;

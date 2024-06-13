@@ -20,14 +20,12 @@ const StartScreen = ({ navigation }: any) => {
 
         <View style={styles.BtnContent}>
           {/* Apply BlurView only to the button */}
-          
             <TouchableOpacity
               style={styles.button}
               onPress={() => navigation.navigate('Login')}
             >
            <Text style={styles.buttonText}>Plant A Tree</Text>
             </TouchableOpacity>
-        
         </View>
       </ImageBackground>
     </View>

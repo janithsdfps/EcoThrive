@@ -118,7 +118,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
         <Text style={styles.SignupText}>Signup</Text>
       </TouchableOpacity>
       </View>
-      
+    
     </View>
   );
 };
@@ -142,7 +142,6 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     height:'35%',
     backgroundColor:'black'
-    
   },
   header:{
     fontSize:30,
@@ -177,7 +176,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginVertical: 30,
     marginHorizontal:30,
-
 },
   rememberMeButton: {
     marginLeft: 10,
@@ -202,7 +200,6 @@ const styles = StyleSheet.create({
   fpText:{
     fontSize:12,
     color:COLORS.primary,
-
   },
   Loginbtn:{
     width:330,
@@ -229,13 +226,10 @@ const styles = StyleSheet.create({
     fontSize:15,
     color:COLORS.ash,
     margin:5
-
   },
-  
-
   SignupText:{
     fontSize:15,
-    color:COLORS.primary
+    color:COLORS.primary,
   },
 })
 
