@@ -5,9 +5,8 @@ interface color{
     primary2:string;
 }
 export const COLORS : color={
-    primary:'#40744D',
-    primary2:'#588563',
+    primary:'#405F48',
+    primary2:'#588563',  
     secondary:'#BED3BE',
     ash:'#999999'
-    
 }
