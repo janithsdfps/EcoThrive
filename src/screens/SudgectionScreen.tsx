@@ -1,9 +1,13 @@
 //import liraries
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 // create a component
-const MyComponent = () => {
+const Suggestion  = () => {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    
     return (
         <View style={styles.container}>
             <Text>MyComponent</Text>
@@ -22,4 +26,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default MyComponent;
+export default Suggestion;
