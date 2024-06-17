@@ -6,6 +6,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import FIcon from "react-native-vector-icons/Fontisto";
 import { COLORS } from '../theme/Theme';
 
+
 const HomeScreen = ({ navigation }: { navigation: any }) => {
   const { user, logout } = useContext(UserContext);
 
@@ -154,8 +155,7 @@ const styles = StyleSheet.create({
     color:COLORS.primary,
     fontFamily:"Poppins-Bold",
     fontSize:25
-  },
-
+  }, 
   mainscrollView:{
     margin:0
   },
