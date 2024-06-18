@@ -6,6 +6,7 @@ import BottomTabNavigator from './src/navigators/BottomTabNavigator';
 import LogingScreen from './src/screens/LogingScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 import StartScreen from './src/screens/StartScreen';
+import SudjectionScreen from './src/screens/SudgectionScreen';
 import { Text } from 'react-native';
 
 
@@ -25,6 +26,7 @@ const Stack = createNativeStackNavigator();
         <Stack.Screen name="Tab" component={BottomTabNavigator}  options={{animation:'simple_push'}}/>
         <Stack.Screen name="Login" component={LogingScreen} options={{animation:'simple_push'}} />
         <Stack.Screen name="Sighup" component={SignUpScreen}  options={{animation:'simple_push'}}/>
+        <Stack.Screen name="sudgection" component={SudjectionScreen} options={{animation:'simple_push'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
