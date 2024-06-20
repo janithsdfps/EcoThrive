@@ -8,23 +8,24 @@ import axios from 'axios';
 // create a component
 const Suggestion  = () => {
 
-    const [Type, setType] = useState('');
-    const [location, setLocation] = useState('');
+    const [method, setmethod] = useState('');
+    const [town, settown] = useState('');
     const [gardenType, setGardenType] = useState('');
     const [purpose, setPurpose] = useState('');
     const [preference, setPerference] = useState('');
     const [schedule, setSchedule] = useState('');
-    const [time, setTime] = useState('');
+    
+    
 
     const suggectionsubmit = async () => {
         const data = {
-          type: Type,
-          location: location,
+           method: method,
+          town: town,
           gardenType: gardenType,
           purpose: purpose,
           preference: preference,
           schedule: schedule,
-          time: time
+          
         };
     
         try {
@@ -43,6 +44,29 @@ const Suggestion  = () => {
           console.error('Error:', error);
         }
       };
+
+      const fetchSuggestions = async () => {
+        try {
+          const response = await axios.get('http://192.168.43.32:3000/generate-plant-lists', {
+            params: {
+                preference,
+                method, 
+                gardenType,
+                purpose,
+                schedule,
+                town,
+              }
+          });
+    
+          if (response.status === 200) {
+            console.log('Fetched Data:', response.data);
+          } else {
+            console.log('Error:', response.data);
+          }
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      }; 
     
     
     
@@ -59,32 +83,22 @@ const Suggestion  = () => {
             <ScrollView>
 
                 <View style={styles.containerinput}>
-                    <Text style={styles.forumHeader}>Type</Text>
+                    <Text style={styles.forumHeader}>Method</Text>
                     <View style={styles.inputContainer}>
                         <TextInput
-                            placeholder="Type (indoor/ outdoor )         "
-                            value={Type}
-                            onChangeText={setType}
+                            placeholder="Type (indoor/ outdoor )                       "
+                            value={method}
+                            onChangeText={setmethod}
                         />
                     </View>
                 </View>
 
-                <View style={styles.containerinput}>
-                    <Text style={styles.forumHeader}>location </Text>
-                    <View style={styles.inputContainer}>
-                        <TextInput
-                            placeholder="location          "
-                            value={location}
-                            onChangeText={setLocation}
-                        />
-                    </View>
-                </View>
-
+                
                 <View style={styles.containerinput}>
                     <Text style={styles.forumHeader}> purpose</Text>
                     <View style={styles.inputContainer}>
                         <TextInput
-                            placeholder="purpose(income/relaxation )                 "
+                            placeholder="purpose(income/relaxation )                      "
                             value={purpose}
                             onChangeText={setPurpose}
                         />
@@ -95,7 +109,7 @@ const Suggestion  = () => {
                     <Text style={styles.forumHeader}>garden type</Text>
                     <View style={styles.inputContainer}>
                         <TextInput
-                            placeholder="garden type(Balcany/ )                 "
+                            placeholder="garden type(Balcany/backyard )                           "
                             value={gardenType}
                             onChangeText={setGardenType}
                         />
@@ -117,7 +131,7 @@ const Suggestion  = () => {
                     <Text style={styles.forumHeader}>schedule</Text>
                     <View style={styles.inputContainer}>
                         <TextInput
-                            placeholder="schedule (busy)                                   "
+                            placeholder="schedule (busy/not busy)                                   "
                             value={schedule}
                             onChangeText={setSchedule}
                         />
@@ -125,19 +139,21 @@ const Suggestion  = () => {
                 </View>
 
                 <View style={styles.containerinput}>
-                    <Text style={styles.forumHeader}>Time per day</Text>
+                    <Text style={styles.forumHeader}>Town</Text>
                     <View style={styles.inputContainer}>
                         <TextInput
-                            placeholder="Time per day                                        "
-                            value={time}
-                            onChangeText={setTime}
+                            placeholder="schedule (kotawa/kurunagala)                                   "
+                            value={town}
+                            onChangeText={settown}
                         />
                     </View>
                 </View>
 
+     
+
                 <TouchableOpacity style={styles.Loginbtn}
-                onPress={suggectionsubmit}>
-                    <Text style={styles.Loginbtntxt}>LOGIN</Text>
+                onPress={fetchSuggestions}>
+                    <Text style={styles.Loginbtntxt}>Start</Text>
                 </TouchableOpacity>
             </ScrollView>
 
