@@ -1,49 +1,54 @@
 //import liraries
-import React, { Component, useState } from 'react';
-import { View, Text, StyleSheet, TextInput, ScrollView, TouchableOpacity } from 'react-native';
+import React, { Component, useState ,useEffect} from 'react';
+import { View, Text, StyleSheet, TextInput, ScrollView, TouchableOpacity, FlatList } from 'react-native';
 import { COLORS } from '../theme/Theme';
 import Icon from "react-native-vector-icons/FontAwesome";
 import axios from 'axios';
 
+
+
 // create a component
-const Suggestion  = () => {
+const Suggestion  = ({navigation }:any) => {
 
-    const [method, setmethod] = useState('');
-    const [town, settown] = useState('');
-    const [gardenType, setGardenType] = useState('');
-    const [purpose, setPurpose] = useState('');
-    const [preference, setPerference] = useState('');
-    const [schedule, setSchedule] = useState('');
+  const [method, setMethod] = useState('');
+  const [town, setTown] = useState('');
+  const [gardenType, setGardenType] = useState('');
+  const [purpose, setPurpose] = useState('');
+  const [preference, setPreference] = useState('');
+  const [schedule, setSchedule] = useState('');
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+  
     
     
 
-    const suggectionsubmit = async () => {
-        const data = {
-           method: method,
-          town: town,
-          gardenType: gardenType,
-          purpose: purpose,
-          preference: preference,
-          schedule: schedule,
+    // const suggectionsubmit = async () => {
+    //     const data = {
+    //        method: method,
+    //       town: town,
+    //       gardenType: gardenType,
+    //       purpose: purpose,
+    //       preference: preference,
+    //       schedule: schedule,
           
-        };
+    //     };
     
-        try {
-          const response = await axios.post('http://192.168.43.32:3000/submit', data, {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          });
+    //     try {
+    //       const response = await axios.post('http://192.168.43.32:3000/submit', data, {
+    //         headers: {
+    //           'Content-Type': 'application/json',
+    //         },
+    //       });
     
-          if (response.status === 200) {
-            console.log('Success:', response.data);
-          } else {
-            console.log('Error:', response.data);
-          }
-        } catch (error) {
-          console.error('Error:', error);
-        }
-      };
+    //       if (response.status === 200) {
+    //         console.log('Success:', response.data);
+    //       } else {
+    //         console.log('Error:', response.data);
+    //       }
+    //     } catch (error) {
+    //       console.error('Error:', error);
+    //     }
+    //   };
 
       const fetchSuggestions = async () => {
         try {
@@ -59,7 +64,9 @@ const Suggestion  = () => {
           });
     
           if (response.status === 200) {
-            console.log('Fetched Data:', response.data);
+            console.log('Fetched Data:', response.data.content);
+            setData(response.data.content); 
+            navigation.navigate('Hire', { plantNames: response.data.content });
           } else {
             console.log('Error:', response.data);
           }
@@ -68,7 +75,7 @@ const Suggestion  = () => {
         }
       }; 
     
-    
+      
     
     return (
         <View style={styles.container}>
@@ -88,7 +95,7 @@ const Suggestion  = () => {
                         <TextInput
                             placeholder="Type (indoor/ outdoor )                       "
                             value={method}
-                            onChangeText={setmethod}
+                            onChangeText={setMethod}
                         />
                     </View>
                 </View>
@@ -122,7 +129,7 @@ const Suggestion  = () => {
                         <TextInput
                             placeholder="perference(fruite/ flowers)                       "
                             value={preference}
-                            onChangeText={setPerference}
+                            onChangeText={setPreference}
                         />
                     </View>
                 </View>
@@ -144,21 +151,29 @@ const Suggestion  = () => {
                         <TextInput
                             placeholder="schedule (kotawa/kurunagala)                                   "
                             value={town}
-                            onChangeText={settown}
+                            onChangeText={setTown}
                         />
                     </View>
                 </View>
-
-     
-
                 <TouchableOpacity style={styles.Loginbtn}
                 onPress={fetchSuggestions}>
                     <Text style={styles.Loginbtntxt}>Start</Text>
                 </TouchableOpacity>
-            </ScrollView>
 
-            
-            
+                    {/* {error ? (
+                        <Text style={styles.errorText}>{error}</Text>
+                    ) : data.length > 0 ? (
+                        <FlatList
+                        data={data}
+                        renderItem={({ item }) => (
+                            <Text style={styles.plantSuggestion}>{item}</Text>
+                        )}
+                        keyExtractor={(item) => item}
+                        />
+                    ) : (
+                        <Text style={styles.noDataText}>No suggestions available yet.</Text>
+                    )} */}
+            </ScrollView>   
         </View>
     ); 
 };
@@ -226,6 +241,22 @@ const styles = StyleSheet.create({
         fontFamily:'Poppins-Bold',
         fontSize:20,
         color:'white'
+      },
+
+
+
+      errorText: {
+        color: 'red',
+        fontSize: 16,
+        padding: 10,
+      },
+      plantSuggestion: {
+        fontSize: 18,
+        padding: 5,
+      },
+      noDataText: {
+        fontSize: 16,
+        padding: 10,
       },
 
 });

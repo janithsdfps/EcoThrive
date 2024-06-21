@@ -33,7 +33,7 @@ const HomeScreen = ({ navigation }: { navigation: any }) => {
           <TouchableOpacity onPress={() => navigation.navigate('sudgection')} style={styles.recomndatation}>
             <Text style={styles.recText}>Recommendation</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Sighup')} style={styles.recomndatation}>
+          <TouchableOpacity onPress={() => navigation.navigate('Hire')} style={styles.recomndatation}>
             <Text style={styles.recText}>Recommendation</Text>
           </TouchableOpacity>
         </View>
