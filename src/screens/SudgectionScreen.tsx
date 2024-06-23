@@ -20,36 +20,6 @@ const Suggestion  = ({navigation }:any) => {
   const [error, setError] = useState(null);
   
     
-    
-
-    // const suggectionsubmit = async () => {
-    //     const data = {
-    //        method: method,
-    //       town: town,
-    //       gardenType: gardenType,
-    //       purpose: purpose,
-    //       preference: preference,
-    //       schedule: schedule,
-          
-    //     };
-    
-    //     try {
-    //       const response = await axios.post('http://192.168.43.32:3000/submit', data, {
-    //         headers: {
-    //           'Content-Type': 'application/json',
-    //         },
-    //       });
-    
-    //       if (response.status === 200) {
-    //         console.log('Success:', response.data);
-    //       } else {
-    //         console.log('Error:', response.data);
-    //       }
-    //     } catch (error) {
-    //       console.error('Error:', error);
-    //     }
-    //   };
-
       const fetchSuggestions = async () => {
         try {
           const response = await axios.get('http://192.168.43.32:3000/generate-plant-lists', {

@@ -30,11 +30,11 @@ const HomeScreen = ({ navigation }: { navigation: any }) => {
       </View>
       <ScrollView style={styles.mainscrollView}>
         <View style={styles.Tbuttons}>
-          <TouchableOpacity onPress={() => navigation.navigate('sudgection')} style={styles.recomndatation}>
-            <Text style={styles.recText}>Recommendation</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('suggestion')} style={styles.recomndatation}>
+            <Text style={styles.recText}>Suggestion</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Hire')} style={styles.recomndatation}>
-            <Text style={styles.recText}>Recommendation</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('PlantTracking')} style={styles.recomndatation}>
+            <Text style={styles.recText}>Plant</Text>
           </TouchableOpacity>
         </View>
 
