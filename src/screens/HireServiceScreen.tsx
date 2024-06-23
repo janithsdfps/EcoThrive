@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, Image, StyleSheet, ActivityIndicator } from 'react-native';
 import axios from 'axios';
+import Icon from "react-native-vector-icons/FontAwesome";
+import { COLORS } from '../theme/Theme';
 
 type Plant = {
   name: string;
@@ -46,6 +48,14 @@ const ImageScreen = ({ route }: any) => {
 
   return (
     <View style={styles.container}>
+        <View style={styles.topbar}>
+            <View style={styles.iconcontainer}>
+                <Icon name="chevron-circle-left" size={25} color='white' />
+                <Text style={styles.screenHeader}>Suggestion</Text>
+                <View style={styles.profilecontainer}></View>
+            </View>
+        </View>
+
       {loading && <ActivityIndicator size="large" color="#0000ff" />}
       <FlatList
         data={images}
@@ -68,7 +78,7 @@ const ImageScreen = ({ route }: any) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+
     backgroundColor: '#fff',
   },
   imageContainer: {
@@ -83,6 +93,31 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 10,
   },
+  topbar:{
+    width:'100%',
+    height:'15%',
+    backgroundColor:COLORS.primary,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    alignContent:'center',
+    top:0
+},
+iconcontainer:{
+    justifyContent:'space-between',
+    flexDirection:'row',
+    alignItems:'center',
+    margin:20
+},
+screenHeader:{
+    color:'white',
+    fontSize:24,
+},
+profilecontainer:{
+    width:35,
+    height:35,
+    borderRadius:18,
+    backgroundColor:'white'
+},
 });
 
 export default ImageScreen;
