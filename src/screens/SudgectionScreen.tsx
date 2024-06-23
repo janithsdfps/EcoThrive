@@ -20,6 +20,7 @@ const Suggestion  = ({navigation }:any) => {
   const [error, setError] = useState(null);
   
     
+
       const fetchSuggestions = async () => {
         try {
           const response = await axios.get('http://192.168.43.32:3000/generate-plant-lists', {

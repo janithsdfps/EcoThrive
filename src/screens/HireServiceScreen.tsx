@@ -6,7 +6,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const MyComponent = () => {
     return (
         <View style={styles.container}>
-            <Text>MyComponent</Text>
+            <Text>hire</Text>
         </View>
     );
 };
@@ -20,6 +20,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#2c3e50',
     },
 });
-
+    
 //make this component available to the app
 export default MyComponent;
