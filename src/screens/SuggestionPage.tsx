@@ -1,53 +1,57 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 
+
 const SuggestionsScreen = () =>{
     return(
-        <View style={StyleSheet.container}>
-            <View style={StyleSheet.header}>
-                <TouchableOpacity style={StyleSheet.backButton}>
+        <View style={styles.container}>
+            <View style={styles.header}>
+                <TouchableOpacity style={styles.backButton}>
                     <Text style={styles.backButtonText}>Back</Text>
                 </TouchableOpacity>
-                <Text style={StyleSheet.title}>Suggestions</Text>
+                <Text style={styles.title}>Suggestions</Text>
                 <Image source={require('../assets/images/profile.jpg')} style={StyleSheet.profilePic}/>
             </View>
 
+
             <ScrollView>
-                <Text style={StyleSheet.sectionTitle}>Best for you</Text>
-                <View style={StyleSheet.cardContainer}>
-                    <View style={StyleSheet.card}>
-                        <Image source={require('../assets/images/sunflower.jpg')} style={StyleSheet.cardImage}/>
-                        <Text style={StyleSheet.cardText}>SunFlower</Text>
+                <Text style={styles.sectionTitle}>Best for you</Text>
+                <View style={styles.cardContainer}>
+                    <View style={styles.card}>
+                        <Image source={require('../assets/images/sunflower.jpg')} style={styles.cardImage}/>
+                        <Text style={styles.cardText}>SunFlower</Text>
                     </View>
-                    <View style={StyleSheet.card}>
-                        <Image source={require('../assets/images/rose.jpg')} style={StyleSheet.cardImage}/>
-                        <Text style={StyleSheet.cardText}>Rose</Text>
+                    <View style={styles.card}>
+                        <Image source={require('../assets/images/rose.jpg')} style={styles.cardImage}/>
+                        <Text style={styles.cardText}>Rose</Text>
                     </View>
-                    <View style={StyleSheet.card}>
-                        <Image source ={require('../assets/images/rose.jpg')} styles={StyleSheet.cardImage}/>
-                        <Text style={StyleSheet.cardText}>Rose</Text>
+                    <View style={styles.card}>
+                        <Image source ={require('../assets/images/rose.jpg')} style={styles.cardImage}/>
+                        <Text style={styles.cardText}>Rose</Text>
                     </View>
-                    <View styles={StyleSheet.card}>
-                        <Image source={require('../assets/images/sunflower.jpg')} syles={StyleSheet.cardImage}/>
-                        <Text style={StyleSheet.cardText}>SunFlower</Text>
+                    <View styles={styles.card}>
+                        <Image source={require('../assets/images/sunflower.jpg')} style={styles.cardImage}/>
+                        <Text style={styles.cardText}>SunFlower</Text>
                     </View>
                 </View>
 
-                <Text style={StyleSheet.sectionTitle}>All Types</Text>
-                <View styles={StyleSheet.cardContainer}>
-                    <View styles={StyleSheet.card}>
-                        <Image source =(require('../assets/images/sunflower.jpg')) style={StyleSheet.cardImage}/>
-                        <Text style={StyleSheet.cardText}>SunFlower</Text>
+
+                <Text style={styles.sectionTitle}>All Types</Text>
+                <View style={styles.cardContainer}>
+                    <View style={styles.card}>
+                        <Image source=require('../assets/images/sunflower.jpg') style={styles.cardImage}/>
+                        <Text style={styles.cardText}>SunFlower</Text>
                     </View>
-                    <View styles ={StyleSheet.card}>
-                        <Image source={require('../assets/images/rose.jpg')} style={StyleSheet.cardImage}/>
-                        <Text style={StyleSheet.cardText}>Rose</Text>
+                    <View style ={styles.card}>
+                        <Image source={require('../assets/images/rose.jpg')} style={styles.cardImage}/>
+                        <Text style={styles.cardText}>Rose</Text>
                     </View>
                 </View>
             </ScrollView>
         </View>
     );
 };
+
 
 const styles = StyleSheet.create({
     container: {
@@ -86,3 +90,4 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
     }
 });
+
