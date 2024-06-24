@@ -37,7 +37,7 @@ const Suggestion  = ({navigation }:any) => {
           if (response.status === 200) {
             console.log('Fetched Data:', response.data.content);
             setData(response.data.content); 
-            navigation.navigate('Hire', { plantNames: response.data.content });
+            navigation.navigate('SugResult', { plantNames: response.data.content });
           } else {
             console.log('Error:', response.data);
           }
