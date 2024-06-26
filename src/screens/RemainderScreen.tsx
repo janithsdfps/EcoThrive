@@ -1,17 +1,14 @@
-// Import libraries
-import {BlurView} from '@react-native-community/blur';
 import React from 'react';
 import {
   View,
   Text,
-  StyleSheet,
-  TouchableOpacity,
   Image,
-  ImageBackground,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 
-// Create a component
-const StartScreen = ({navigation}: any) => {
+const SuggestionsScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -19,86 +16,134 @@ const StartScreen = ({navigation}: any) => {
           <Text style={styles.backButtonText}>Back</Text>
         </TouchableOpacity>
         <Text style={styles.title}>Suggestions</Text>
+        <Image
+          source={require('../assets/images/profile.jpg')}
+          style={StyleSheet.profilePic}
+        />
       </View>
 
-      <Text style={styles.sectionTitle}>Best for you</Text>
-      <View style={styles.cardContainer}>
-        <View style={styles.card}>
-         
-          <Text style={styles.cardText}>SunFlower</Text>
+      <ScrollView>
+        <Text style={styles.sectionTitle}>Best for you</Text>
+        <View style={styles.cardContainer}>
+          <View style={styles.card}>
+            <Image
+              source={require('../assets/images/sunflower.jpg')}
+              style={styles.cardImage}
+            />
+            <Text style={styles.cardText}>SunFlower</Text>
+          </View>
+          <View style={styles.card}>
+            <Image
+              source={require('../assets/images/rose.jpg')}
+              style={styles.cardImage}
+            />
+            <Text style={styles.cardText}>Rose</Text>
+          </View>
+          <View style={styles.card}>
+            <Image
+              source={require('../assets/images/rose.jpg')}
+              style={styles.cardImage}
+            />
+            <Text style={styles.cardText}>Rose</Text>
+          </View>
+          <View style={styles.card}>
+            <Image
+              source={require('../assets/images/sunflower.jpg')}
+              style={styles.cardImage}
+            />
+            <Text style={styles.cardText}>SunFlower</Text>
+          </View>
         </View>
-        <View style={styles.card}>
-          
-          <Text style={styles.cardText}>Rose</Text>
-        </View>
-        styles
-        <View style={styles.card}>
-         
-          <Text style={styles.cardText}>Rose</Text>
-        </View>
-        <View style={styles.card}>
-         >
-          <Text style={styles.cardText}>SunFlower</Text>
-        </View>
-      </View>
 
-      <View></View>
+        <Text style={styles.sectionTitle}>All Types</Text>
+        <View style={styles.cardContainer}>
+          <View style={styles.card}>
+            <Image
+              source={require('../assets/images/sunflower.jpg')}
+              style={styles.cardImage}
+            />
+            <Text style={styles.cardText}>SunFlower</Text>
+          </View>
+          <View style={styles.card}>
+            <Image
+              source={require('../assets/images/rose.jpg')}
+              style={styles.cardImage}
+            />
+            <Text style={styles.cardText}>Rose</Text>
+          </View>
+        </View>
+      </ScrollView>
     </View>
   );
 };
 
-// Define your styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
   },
-  image: {
-    flex: 1,
-    width: '100%',
-    resizeMode: 'cover',
-    justifyContent: 'center',
-  },
-  BtnContent: {
-    flex: 1,
-    justifyContent: 'flex-end',
+  header: {
+    flexDirection: 'row',
     alignItems: 'center',
-    paddingBottom: 40,
+    paddingHorizontal: 10,
+    paddingTop: 10,
+    backgroundColor: '#4CAF50',
   },
-
-  button: {
-    width: 300,
-    height: 60,
-    justifyContent: 'center',
-    backgroundColor: 'rgba(73,92,91,0.9)',
-    borderRadius: 10,
-    alignItems: 'center',
-    borderColor: 'white',
-    borderWidth: 1,
+  backButton: {
+    marginRight: 10,
   },
-  buttonText: {
-    fontSize: 24,
-    color: 'white',
-    fontFamily: 'Poppins-Bold',
-  },
-  logo: {
-    width: '40%',
-    height: '40%',
-    marginTop: '25%',
-    alignSelf: 'center',
+  backButtonText: {
+    color: '#fff',
+    fontSize: 18,
   },
   title: {
-    color: 'white',
-    fontSize: 28,
-    marginStart: '15%',
-    marginTop: '8%',
+    flex: 1,
+    textAlign: 'center',
+    fontSize: 18,
+    color: '#fff',
   },
-  semiTitle: {
-    fontSize: 15,
-    color: '#B6B6B6',
-    marginStart: '15%',
-    marginTop: '5%',
+  profilePic: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+  },
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginVertical: 10,
+    marginHorizontal: 10,
+  },
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginVertical: 10,
+    marginHorizontal: 10,
+  },
+  cardContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    paddingHorizontal: 10,
+  },
+  card: {
+    width: '48%',
+    backgroundColor: '#f8f8f8',
+    borderRadius: 10,
+    marginBottom: 10,
+    alignItems: 'center',
+    padding: 10,
+  },
+  cardImage: {
+    width: 100,
+    height: 100,
+    resizeMode: 'contain',
+    borderRadius: 10,
+  },
+  cardText: {
+    marginTop: 10,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 
-// Make this component available to the app
-export default StartScreen;
+export default SuggestionsScreen;
