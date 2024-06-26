@@ -12,6 +12,7 @@ import sugResultScreen from './src/screens/sugResultScreen';
 import PrivacyScreen from './src/screens/PrivacyScreen';
 import PlantTracking from './src/screens/PlantTracking';
 import SuggestionScreen from './src/screens/SuggestionScreen;
+import MarketPlace from './src/screens/MarketPlace'
 import {Text} from 'react-native';
 
 enableScreens(true);
@@ -74,6 +75,11 @@ const App = () => {
           name="SuggestionScreen"
           component={SuggestionScreen}
           options={{animation: 'simple_push'}}
+        />
+        <Stack.Screen
+        name="MarketPlace"
+        component={MarketPlace}
+        options={{animation: 'simple_push'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
