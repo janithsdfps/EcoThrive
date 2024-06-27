@@ -11,7 +11,8 @@ import HireScreen from './src/screens/HireServiceScreen';
 import sugResultScreen from './src/screens/sugResultScreen';
 import PrivacyScreen from './src/screens/PrivacyScreen';
 import PlantTracking from './src/screens/PlantTracking';
-import OnlineConsulting from './src/screens/OnlineConsulting';
+import OnlineConsulting from './src/screens/OnlineConsulting'; 
+import HireExpert from './src/screens/HireExpert';
 import { Text } from 'react-native';
 
 
@@ -37,6 +38,7 @@ const Stack = createNativeStackNavigator();
         <Stack.Screen name="Privacy" component={PrivacyScreen} options={{animation:'simple_push'}}/>
         <Stack.Screen name="PlantTracking" component={PlantTracking} options={{animation:'simple_push'}}/>
         <Stack.Screen name="OnlineConsulting" component={OnlineConsulting} options={{animation:'simple_push'}}/>
+        <Stack.Screen name="HireExpert" component={HireExpert} options={{animation:'simple_push'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

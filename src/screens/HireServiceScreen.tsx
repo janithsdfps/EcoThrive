@@ -19,7 +19,7 @@ const HireServiceScreen =({ navigation }: { navigation: any }) => {
 
                 <View style={styles.tabs}>
                 <Button mode="contained" style={styles.tabButton} onPress={() => navigation.navigate('OnlineConsulting')}>Online Consulting</Button>
-                <Button mode="contained" style={styles.tabButton}>Hire Expert</Button>
+                <Button mode="contained" style={styles.tabButton} onPress={() => navigation.navigate('HireExpert')}>Hire Expert</Button>
                 </View>
 
                 <ScrollView horizontal={true}>
