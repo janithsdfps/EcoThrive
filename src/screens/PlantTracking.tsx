@@ -12,7 +12,7 @@ const PalntTracking = ({navigation}:any) => {
 
     let plantName='Rose'
     const [selectedStage, setSelectedStage] = useState('');
-    const [stageData, setStageData] = useState(null);
+    const [stageData, setStageData] = useState([]);
     const [loading, setLoading] = useState(false);
   
     const stages = [
@@ -33,7 +33,7 @@ const PalntTracking = ({navigation}:any) => {
         // Fetch data based on stageId
         switch (stageId) {
           case 'sprout':
-            response = await axios.get('http://your-api-endpoint/sprout-data');
+            response = await axios.get('http://192.168.43.32:3000/spoutplant');
             break;
           case 'seeding':
             response = await axios.get('http://your-api-endpoint/seeding-data');
@@ -52,12 +52,15 @@ const PalntTracking = ({navigation}:any) => {
             return;
         }
   
+        console.log('Response Data:', response.data);
         setStageData(response.data);
       } catch (error) {
         console.error(`Error fetching data for ${stageId}:`, error);
       } finally {
         setLoading(false);
       }
+
+      
     };
     return (
         <View style={styles.container}>
@@ -109,7 +112,9 @@ const PalntTracking = ({navigation}:any) => {
                 <View style={styles.discriptionContainer}>
                     <Text>Discrption</Text>
                     <Line></Line>
-                    <Text>dis</Text>
+                                  {stageData.map((data: any) => (
+                        <Text key={data.id}>{data.details}</Text>
+                      ))} 
                 </View>
             </ScrollView>
             
