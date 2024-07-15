@@ -1,5 +1,5 @@
 const express = require('express');
-const { run } = require('./index.js'); // Make sure the path is correct
+const { run } = require('./index.js');
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
